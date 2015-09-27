@@ -1,7 +1,7 @@
 //app-wide functions go here
 
 $("h1").fitText(0.24);
-$("h2").fitText(0.86);
+$("h2").fitText(0.89);
 
 MAX_CACHE_AGE = 1000 * 60 * 60; //1 hour (1000ms * 60sec/min * 60min/hours)
 
