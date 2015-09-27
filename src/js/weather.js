@@ -38,6 +38,5 @@ $(function() {
     }
 
     //get our cached (or fresh) data and display the weather
-    displayWeather(cachedGetter(url));
-
+    cachedGetter(url,displayWeather);
   });

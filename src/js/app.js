@@ -15,9 +15,10 @@ function supports_html5_storage() {
 }
 
 
-//pass a URL to get the JSON at that URL and cache it then return it.
+//pass a URL to get the JSON at that URL and cache it then call our callback
 //if the URL is already in the cache, return the cached copy
-function cachedGetter(url) {
+//can't just return a value because getJSON happens asynchronously
+function cachedGetter(url,callback) {
   prefix = "nanodash.url.";
 
   //create an object with a timestamp and the content of the request
@@ -28,9 +29,9 @@ function cachedGetter(url) {
     obj = JSON.parse(sessionStorage.getItem(prefix + url));
 
     //Do we have a current copy?
-    if( obj && Date.now() - obj.timestamp < MAX_CACHE_AGE ){
-      //parse the string back into an object, then return the data piece
-      return(obj.data);
+    if( obj !== null && Date.now() - obj.timestamp < MAX_CACHE_AGE ){
+      //call our callback.
+      callback(obj.data);
     }else{
       //make the request...fo realz
       $.getJSON(url,function(data) {
@@ -41,8 +42,8 @@ function cachedGetter(url) {
         //turn the object into a string for storage
         sessionStorage.setItem(prefix + url,JSON.stringify(obj));
 
-        //return it for use
-        return(data);
+        //call our callback function with the data
+        callback(obj.data);
       });
     }
   }
