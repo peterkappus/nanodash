@@ -30,8 +30,20 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   return gulp.src('src/js/*.js')
-    .pipe( uglify() )
     .pipe( concat('all.min.js'))
+    .pipe( uglify({
+      mangle: true,
+    	compress: {
+    		sequences: true,
+    		dead_code: true,
+    		conditionals: true,
+    		booleans: true,
+    		unused: true,
+    		if_return: true,
+    		join_vars: true,
+    		drop_console: true
+    	}
+    }) )
     .pipe( gulp.dest('dist/js/'))
     .pipe( livereload( server ));
 });

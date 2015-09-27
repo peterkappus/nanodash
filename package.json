@@ -11,7 +11,7 @@
     "gulp-jade": "~0.3.0",
     "gulp-livereload": "~0.2.0",
     "gulp-sass": "~0.4.1",
-    "gulp-slim": "^0.3.0",
+    "gulp-slim": "~0.3.0",
     "gulp-uglify": "~0.1.0",
     "gulp-util": "~2.2.12",
     "marked": "~0.3.0",
