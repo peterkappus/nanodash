@@ -21,7 +21,7 @@ $(function() {
         getDepartureTime();
       }
       //display it
-      $("#next_168").html(min + " min to next 168");
+      $("#next_bus").html(min + " min to next 168");
     }
 
     //retreive every 5 min
