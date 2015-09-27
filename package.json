@@ -2,7 +2,6 @@
   "name": "gulp",
   "version": "0.0.1",
   "description": "Gulp Recipe - Jade, Sass, Livereload and static server",
-  "author": "Chris Kjaer",
   "devDependencies": {
     "express": "~3.4.8",
     "gulp": "~3.5.0",

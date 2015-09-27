@@ -12,8 +12,7 @@ $(function() {
       $(elementId).html(html);
     }
 
-    $.getJSON(url,function(data) {
-
+    function displayWeather(data){
       current = data.currently.temperature;
       high = data.daily.data[0].temperatureMax;
       low = data.daily.data[0].temperatureMin;
@@ -36,6 +35,9 @@ $(function() {
       showTemp("#temp",current);
       showTemp("#high",high);
       showTemp("#low",low);
+    }
 
-    });
+    //get our cached (or fresh) data and display the weather
+    displayWeather(cachedGetter(url));
+
   });
