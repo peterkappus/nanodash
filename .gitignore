@@ -1,0 +1,2 @@
+#config.js holds our secret stuff. Don't put this in source control
+config.js

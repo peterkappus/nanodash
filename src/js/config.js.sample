@@ -1,0 +1,4 @@
+// Copy this file to config.js and put your Secret(ish) API keys, etc. in it.
+// Note that you're probably going to deploy all this to a public webserver anyway so don't put anything too sensitive in here.
+
+FORECAST_IO_API_KEY = "12345...Replace this with your API key.";

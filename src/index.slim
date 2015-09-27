@@ -1,0 +1,38 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+
+    / refresh every X Seconds
+    meta http-equiv="refresh" content="1800"
+
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+    / hide safari stuff on ipad, etc.
+    meta name="apple-mobile-web-app-capable" content="yes"
+
+    /someday, let's make an icon.
+      link rel="icon" type="image/png" href="/images/icon.png"
+      link rel="shortcut icon" href="/images/icon.png" type="image/x-icon"
+    title nanodash
+    link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    css:
+      h1, h2, h3, h4 {
+        font-family: /*LeagueSpartanBold,*/ helvetica;
+        font-weight: bold;
+      }
+      body {
+        background: #000;
+        color: #fff;
+      }
+  body
+    .container
+      h3#temp style="font-size: 10rem"
+      h1#high
+      h2#next_168
+      h3#low
+      div style="min-height:300px"
+      script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+      script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
+      script src="/js/all.min.js"
