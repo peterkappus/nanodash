@@ -43,10 +43,10 @@ function cachedGetter(url,callback) {
         //call our callback function with the data
         callback(obj.data);
       });
-    }else{ //no local storage; just make the request and call the callback
-      $.getJSON(url,function(data) {
-        callback(data);
-      }
     }
+  }else{ //no local storage; just make the request and call the callback
+    $.getJSON(url,function(data) {
+      callback(data);
+    });
   }
 }
