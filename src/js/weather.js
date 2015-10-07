@@ -8,7 +8,7 @@ $(function() {
     url = "https://api.forecast.io/forecast/" + FORECAST_IO_API_KEY + "/51.5072,0.1275?&callback=?"
 
     function showTemp(elementId, value) {
-      html = Math.round(value) + '&deg;F';
+      html = Math.round(value) + '&deg;';
       $(elementId).html(html);
     }
 

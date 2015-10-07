@@ -5,13 +5,14 @@ $(function() {
   //using Aiden Feldman's awesome JSONProxy: https://jsonp.afeld.me/
   //TFL has an API for bus-times but it requires IP whitelisting (and authentication) which won't do for a client-only solution like this
   bus_url = "https://jsonp.afeld.me/?url=http%3A%2F%2Fm.countdown.tfl.gov.uk%2Farrivals%2F76840&callback=?";
+  //bus_url = "http://m.countdown.tfl.gov.uk/arrivals/76840?callback=?"
   departureTime = null;
 
   function getDepartureTime(){
     $.getJSON(bus_url,function(data){
 
       //this nasty regex gives us the time to the next 168 bus
-      //TODO: make this easily configurable
+      //TODO: put this in the config file so it's easier to customise
       regex = /Road&#160;<\/td>\s+<td class="resDue">(\d+)/;
 
       //get the first one

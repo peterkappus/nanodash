@@ -15,3 +15,8 @@ I'm using gulp to watch and compile my Slim templates and concat and minify my j
 To make this work, you'll need to install Gulp (probably via NPM) and Slim.
 
 TODO: add more instructions on how to do this.
+
+## Development
+Start gulp
+``` $ gulp ```
+visit http://localhost:1337
