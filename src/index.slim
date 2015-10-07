@@ -21,6 +21,9 @@ html lang="en"
       h1, h2, h3, h4 {
         font-family: /*LeagueSpartanBold,*/ helvetica;
         font-weight: bold;
+        /* hacky way to overwrite bootstrap vars */
+        margin-top: 10px !important
+
       }
       body {
         background: #000;
@@ -38,7 +41,7 @@ html lang="en"
         .col-md-6
           h3#temp
         .col-md-6
-          h3#clock
+          h3#clock.pull-right
       .row
         .col-md-12
           h1#high
