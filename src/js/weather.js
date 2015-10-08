@@ -12,6 +12,10 @@ $(function() {
       $(elementId).html(html);
     }
 
+    function f_to_c(tempFahrenheit) {
+      return (tempFahrenheit-32)/1.8;
+    }
+
     function displayWeather(data){
       current = data.currently.temperature;
       high = data.daily.data[0].temperatureMax;
@@ -34,6 +38,7 @@ $(function() {
 
       showTemp("#temp",current);
       showTemp("#high",high);
+      $("#high_c").html(Math.round(f_to_c(high)) + "&deg;C");
       showTemp("#low",low);
     }
 

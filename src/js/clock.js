@@ -5,9 +5,13 @@
 $(function() {
 
   function updateTime(){
-    $("#clock").html(strftime("%H:%M"));
-  }
+    d = new Date();
+    $("#clock").html(d.getHours() + ":" + d.getMinutes());
 
+    if(d.getHours() == 8 && d.getMinutes() > 30) {
+      $("#clock").addClass("red");
+    }
+  }
 
   //update every min
   setInterval(updateTime,1000*60);

@@ -35,6 +35,12 @@ html lang="en"
       h3 {
          font-size: 10rem
       }
+      .red{
+        background: #900;
+      }
+      #high_c {
+        font-size: 12rem;
+      }
   body
     .container
       .row
@@ -44,7 +50,9 @@ html lang="en"
           h3#clock.pull-right
       .row
         .col-md-12
-          h1#high
+          h1
+            span#high
+            span#high_c
           h2#next_bus
           h3#low
           script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
