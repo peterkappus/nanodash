@@ -6,9 +6,17 @@ $(function() {
 
   function updateTime(){
     d = new Date();
-    $("#clock").html(d.getHours() + ":" + d.getMinutes());
+    min = d.getMinutes();
 
-    if(d.getHours() == 8 && d.getMinutes() > 30) {
+    //zero padding
+    if(min < 10) {
+      min = "0" + min;
+    }
+
+    $("#clock").html(d.getHours() + ":" + min);
+
+    //is it time to go?
+    if(d.getHours() == 8 && d.getMinutes() > 35) {
       $("#clock").addClass("red");
     }
   }
