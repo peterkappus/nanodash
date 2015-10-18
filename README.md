@@ -2,21 +2,32 @@
 
 A tiny, lightweight framework for building info boards based purely on client-side JS/HTML. Based on Bootstrap for typography & layout and jQuery for grabbing and twerking data.
 
-Possibly a bad idea if it requires you to put API keys into the HTML so don't be a doofus. Maybe add some basic-auth in your production environment or hide behind a no-robots file.
+## Caveat Emptor
 
-## Wanna help?
+A major goal of this project is to keep everything client-side so you can throw this thing on AWS or somewhere cheap and be up and running. While it's awesome that you won't need any server-side logic, it does mean all your API keys will be exposed in your code. Therefore, you should probably protect your deployment behind some basic-auth and/or a non-obvious URL that you don't share and a no-robots file to prevent spidering. If you're okay with all that... read on.
 
-Please do...
+## Getting Started
 
-## Setup
+  - Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
+  - To get weather data sign up for an API key from [Forecast.io](https://developer.forecast.io/)
+  - Copy "config.js.sample" to "config.js"
+  - Swap in your API key.
+  - Run Gulp to compile your code  
+  - Deploy your compiled HTML (in the 'dist' folder) to a web server, CDN, etc.
 
-I'm using gulp to watch and compile my Slim templates and concat and minify my javascript.
 
-To make this work, you'll need to install Gulp (probably via NPM) and Slim.
+Starting gulp:
 
-TODO: add more instructions on how to do this.
+    $ gulp
 
-## Development
-Start gulp
-``` $ gulp ```
-visit http://localhost:1337
+Now visit http://localhost:1337 to see your code in action. You can use LiveReload to see changes in realtime.
+
+## TODO
+
+- Add tests. Yes, really.
+- Make bus regex and URL part of the configuration
+- Make it easy to configure the times when the clock background should turn red.
+
+## Done Recently (changelog)
+- Make clock BG turn red from 8:30-9am.
+- Add Celsius display of high temp (so I can learn)

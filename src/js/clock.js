@@ -16,7 +16,7 @@ $(function() {
     $("#clock").html(d.getHours() + ":" + min);
 
     //is it time to go?
-    if(d.getHours() == 8 && d.getMinutes() > 35) {
+    if(d.getHours() == 8 && d.getMinutes() > 30) {
       $("#clock").addClass("red");
     }
   }

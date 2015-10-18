@@ -3,16 +3,13 @@ html lang="en"
   head
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
-
     / refresh every X Seconds
     meta http-equiv="refresh" content="1800"
-
     meta name="viewport" content="width=device-width, initial-scale=1"
-
     / hide safari stuff on ipad, etc.
     meta name="apple-mobile-web-app-capable" content="yes"
-
-    /someday, let's make an icon.
+    /
+      someday, let's make an icon.
       link rel="icon" type="image/png" href="/images/icon.png"
       link rel="shortcut icon" href="/images/icon.png" type="image/x-icon"
     title nanodash
@@ -43,18 +40,19 @@ html lang="en"
       }
   body
     .container
-      .row
-        .col-md-6
-          h3#temp
-        .col-md-6
-          h3#clock.pull-right
-      .row
-        .col-md-12
-          h1
-            span#high
-            small#high_c
-          h2#next_bus
-          h3#low
-          script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
-          script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
-          script src="/js/all.min.js"
+      #info
+        .row
+          .col-md-6
+            h3#temp
+          .col-md-6
+            h3#clock.pull-right
+        .row
+          .col-md-12
+            h1
+              span#high
+              small#high_c
+            h2#next_bus
+            h3#low
+    script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+    script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
+    script src="/js/all.min.js"
