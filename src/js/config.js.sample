@@ -3,6 +3,12 @@
 
 FORECAST_IO_API_KEY = "12345...Replace this with your API key.";
 
-//todo...DIY Bus display...
-//BUS_URL = "";
-//BUS_REGEX = "";
+//using Aiden Feldman's awesome JSONProxy: https://jsonp.afeld.me/
+BUS_URL = "https://jsonp.afeld.me/?url=http%3A%2F%2Fm.countdown.tfl.gov.uk%2Farrivals%2F76840&callback=?";
+
+//this nasty regex gives us the time to the next 168 bus
+BUS_REGEX = /Road&#160;<\/td>\s+<td class="resDue">(\d+)/;
+
+//latitude & Longitude pair to insert in Forecast.IO URL
+//this is for a "random" location in London ;)
+FORECAST_LAT_LONG = "51.554757,-0.165694";

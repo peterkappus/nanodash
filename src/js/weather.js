@@ -5,7 +5,7 @@ $(function() {
     //you could implement some sort of server-side proxy if you wanted to hide your key...
     //TODO add these: https://github.com/erikflowers/weather-icons; http://cdnjs.com/libraries/weather-icons
 
-    url = "https://api.forecast.io/forecast/" + FORECAST_IO_API_KEY + "/51.5072,0.1275?&callback=?"
+    url = "https://api.forecast.io/forecast/" + FORECAST_IO_API_KEY + "/" + FORECAST_LAT_LONG + "?&callback=?"
 
     function showTemp(elementId, value) {
       html = Math.round(value) + '&deg;';

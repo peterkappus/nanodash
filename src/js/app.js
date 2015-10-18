@@ -3,7 +3,7 @@
 $("h1").fitText(0.24);
 $("h2").fitText(0.89);
 
-MAX_CACHE_AGE = 1000 * 60 * 60; //1 hour (1000ms * 60sec/min * 60min/hours)
+MAX_CACHE_AGE = 1000 * 60 * 60; //1 hour (1000ms * 60sec per min * 60min per hour)
 
 //check for local storage
 function supports_html5_storage() {
@@ -15,12 +15,12 @@ function supports_html5_storage() {
 }
 
 
-//pass a URL to get the JSON at that URL and cache it then call our callback
-//if the URL is already in the cache, return the cached copy
-//can't just return a value because getJSON happens asynchronously
+// A simple JSON request cache using the HTML5 "SessionStorage" object to store the JSON response as the value with the URL as the key
+//Must pass a callback because the request happens asynchronously
 function cachedGetter(url,callback) {
   prefix = "nanodash.url.";
 
+  //only do this for modern browsers.
   if(supports_html5_storage()) {
     //grab the string from the cache and convert it back to an object
     obj = JSON.parse(sessionStorage.getItem(prefix + url));
