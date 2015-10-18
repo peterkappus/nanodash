@@ -25,9 +25,9 @@ Now visit http://localhost:1337 to see your code in action. You can use LiveRelo
 ## TODO
 
 - Add tests. Yes, really.
-- Make bus regex and URL part of the configuration
 - Make it easy to configure the times when the clock background should turn red.
 
 ## Done Recently (changelog)
+- Make bus regex, bus URL, and forecast location configurable
 - Make clock BG turn red from 8:30-9am.
 - Add Celsius display of high temp (so I can learn)
