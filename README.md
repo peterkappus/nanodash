@@ -29,6 +29,12 @@ Now visit http://localhost:1337 to see your code in action. You can use LiveRelo
 
 - Add tests. Yes, really.
 - Make it easy to configure the times when the clock background should turn red.
+- Document some architecture goals. E.G. tiny light-weight modules that can be swapped in and out.
+- Build a way to rotate through various panels on a timer.
+- Build a text snippet display module (read from Google docs, or JSON, or HTML. Display one chunk every day?)
+- Build a news/headline module.
+- Make more awesome...
+
 
 ## Done Recently (changelog)
 - Make bus regex, bus URL, and forecast location configurable

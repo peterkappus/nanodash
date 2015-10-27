@@ -3,7 +3,7 @@
 $("h1").fitText(0.24);
 $("h2").fitText(0.89);
 
-MAX_CACHE_AGE = 1000 * 60 * 60; //1 hour (1000ms * 60sec per min * 60min per hour)
+MAX_CACHE_AGE_HOURS = 2;
 
 //check for local storage
 function supports_html5_storage() {
@@ -26,7 +26,7 @@ function cachedGetter(url,callback) {
     obj = JSON.parse(sessionStorage.getItem(prefix + url));
 
     //Do we have a current copy?
-    if( obj !== null && Date.now() - obj.timestamp < MAX_CACHE_AGE ){
+    if( obj !== null && Date.now() - obj.timestamp < (MAX_CACHE_AGE_HOURS * 1000 * 60 * 60) ){
       //call our callback.
       callback(obj.data);
     }else{
