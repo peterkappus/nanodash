@@ -8,7 +8,10 @@ A major goal of this project is to keep everything client-side so you can throw 
 
 ## Getting Started
 
+Note: these instructions assume Node.js 0.10.28
   - Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
+  - Run `gem install slim` to install the ruby gem for slim if you don't have it installed already
+  - Run `npm install` to install the required Node.js modules
   - To get weather data sign up for an API key from [Forecast.io](https://developer.forecast.io/)
   - Copy "config.js.sample" to "config.js"
   - Swap in your API key.
