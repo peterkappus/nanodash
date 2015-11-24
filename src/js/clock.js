@@ -4,6 +4,13 @@
 
 $(function() {
 
+  //size our text in the main clock panel
+  //$("#clock-panel h1").fitText(0.01);
+  //$('#clock-panel').height(window.innerHeight*0.9).width(window.innerWidth*0.9);
+  //resize the text to fill the box
+  //$('#clock-panel h1').textfill({minFontPixels:20, maxFontPixels:1500});
+
+
   function updateTime(){
     d = new Date();
     min = d.getMinutes();
@@ -13,17 +20,19 @@ $(function() {
       min = "0" + min;
     }
 
-    $("#clock").html(d.getHours() + ":" + min);
+    $(".clock").html(d.getHours() + ":" + min);
 
     //is it time to go?
     if(d.getHours() == 8 && d.getMinutes() > 30) {
-      $("#clock").addClass("red");
+      $(".clock").addClass("red");
     }
   }
 
-  //update every min
-  setInterval(updateTime,1000*60);
+  //update every 30 sec
+  setInterval(updateTime,1000*20);
 
   //first time...
   updateTime();
+
+  dashPanels.push({name:'#clock',callback: updateTime});
 });

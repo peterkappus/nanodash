@@ -37,4 +37,5 @@ $(function() {
 
   //first time...
   getDepartureTime();
+
 });

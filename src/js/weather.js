@@ -7,6 +7,8 @@ $(function() {
 
     url = "https://api.forecast.io/forecast/" + FORECAST_IO_API_KEY + "/" + FORECAST_LAT_LONG + "?&callback=?"
 
+    //$("h1#temps").fitText(0.24);
+
     function showTemp(elementId, value) {
       html = Math.round(value) + '&deg;';
       $(elementId).html(html);
@@ -44,4 +46,10 @@ $(function() {
 
     //get our cached (or fresh) data and display the weather
     cachedGetter(url,displayWeather);
+
+    //add our callback and our panel ID to our array of panels
+    dashPanels.push({name:'#weatherBus',callback: function(){
+      $("h1#temps").fitText(0.24); //set font-sizes
+      $("h2#next_bus").fitText(0.89);
+    }});
   });
