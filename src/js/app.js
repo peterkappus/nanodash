@@ -6,7 +6,7 @@
   dashPanels = [];
 
   MAX_CACHE_AGE_HOURS = 2;
-  INTERVAL = 5; //seconds between panel rotations
+  INTERVAL = 20; //seconds between panel rotations
 
   //check for local storage
   function supports_html5_storage() {
