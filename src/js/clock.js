@@ -34,5 +34,6 @@ $(function() {
   //first time...
   updateTime();
 
-  dashPanels.push({name:'#clock',callback: updateTime});
+  //Don't display for now...
+  //dashPanels.push({name:'#clock',callback: updateTime});
 });

@@ -25,6 +25,13 @@ Starting gulp:
 
 Now visit http://localhost:1337 to see your code in action. You can use LiveReload to see changes in realtime.
 
+
+## A note on architecture
+The idea is to have a set of "panels" that can be rotated through. I'm discovering this is actually a bad user experience because, if the panel you want to see isn't showing...you have to wait for it to come around. I may revisit this soon, but for now each panel uses a `.dashpanel` class. There's an array of "dashpanels" which each JS file can add to by pushing the name and a callback to call each time the panel is shown. useful when you want to reload or reformat something on each rotation. Call it like so:
+
+`dashPanels.push({name:'#myCoolPanel',callback: myCoolSetupFunction});`
+
+
 ## TODO
 
 - Add tests. Yes, really.
