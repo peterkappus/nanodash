@@ -12,3 +12,9 @@ BUS_REGEX = /Road&#160;<\/td>\s+<td class="resDue">(\d+)/;
 //latitude & Longitude pair to insert in Forecast.IO URL
 //this is for a "random" location in London ;)
 FORECAST_LAT_LONG = "51.554757,-0.165694";
+
+ROTATION_INTERVAL = 10; //seconds between panel rotations
+
+//Add panels here
+dashPanels.push({name:'#wisdom',callback: wisdom_setup});
+dashPanels.push({name:'#weatherBus',callback: weather_setup});

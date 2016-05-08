@@ -19,17 +19,15 @@ var now = new Date();
 var start = new Date(now.getFullYear(), 0, 0);
 var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
+var oneHour = 1000 * 60 * 60 * 1;
 var dayOfYear = Math.floor(diff / oneDay);
 
-//use the modulus to iterate through the lines so we get one per day
-picked = lines[dayOfYear % lines.length];
+//rotate daily
+//picked = lines[dayOfYear % lines.length];
 
-
-//pick one randomly
-//picked = lines[Math.round(Math.random() * (lines.length-1))];
-
-//strip off the newline char at the end
-//picked = picked.replace("\n",'');
+//or rotate hourly
+var hourOfYear = Math.floor(diff / oneHour);
+picked = lines[hourOfYear % lines.length];
 
 //set the text
 $('#picked').html(picked);
