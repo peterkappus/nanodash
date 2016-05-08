@@ -1,6 +1,6 @@
 dashPanels = [];
 
-ROTATION_INTERVAL = 5; //seconds between panel rotations
+ROTATION_INTERVAL = 15; //seconds between panel rotations
 MAX_CACHE_AGE_HOURS = 2;
 
 //check for local storage
