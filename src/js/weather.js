@@ -44,10 +44,8 @@ function displayWeather(data){
   showTemp("#low",low);
 }
 
-//get our cached (or fresh) data and display the weather
-cachedGetter(url,displayWeather);
-
 function weather_setup(){
   $("h1#temps").fitText(0.24); //set font-sizes
   $("h2#next_bus").fitText(0.89);
+  cachedGetter(url,displayWeather);
 }

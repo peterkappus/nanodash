@@ -9,7 +9,7 @@
   //$('#clock-panel h1').textfill({minFontPixels:20, maxFontPixels:1500});
 
 
-  function updateTime(){
+  function showTime(){
     d = new Date();
     min = d.getMinutes();
 
@@ -27,7 +27,7 @@
 
     //random color
     color = "#"
-    for(i = 0; i<6; i++){
+    for(var i = 0; i<6; i++){
       color += (Math.random()*0x9<<0).toString(16)
     }
 

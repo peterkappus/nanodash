@@ -11,8 +11,6 @@ function supports_html5_storage() {
   }
 }
 
-var rotation;
-
 //swap panels
 //TODO make this smarter so it a) rotates through > 2 panels and b) allows you to set how much time to spend on each.
 var i = 0;
@@ -23,7 +21,10 @@ function step(){
     //show this panel if it's within the hours specified.
     if(hour >= dashPanels[i]['start_hour'] && hour <= dashPanels[i]['end_hour']) {
       $(dashPanels[i]['name']).show();
-      dashPanels[i]['callback'](); //weird syntax to call our callback
+
+      if(dashPanels[i]['callback']) {
+        dashPanels[i]['callback'](); //weird syntax to call our callback
+      }
       //clearInterval(rotation);
       setTimeout(step, dashPanels[i]['interval']*1000);
     }else{
