@@ -1,6 +1,5 @@
 dashPanels = [];
 
-ROTATION_INTERVAL = 15; //seconds between panel rotations
 MAX_CACHE_AGE_HOURS = 2;
 
 //check for local storage
@@ -12,6 +11,7 @@ function supports_html5_storage() {
   }
 }
 
+var rotation;
 
 //swap panels
 //TODO make this smarter so it a) rotates through > 2 panels and b) allows you to set how much time to spend on each.
@@ -19,17 +19,20 @@ var i = 0;
 function step(){
    //alert(i);
     $('.dashpanel').hide(); //hide em all
-    $(dashPanels[i]['name']).show();
-    dashPanels[i]['callback'](); //weird syntax to call our callback
+    hour = new Date().getHours();
+    //show this panel if it's within the hours specified.
+    if(hour >= dashPanels[i]['start_hour'] && hour <= dashPanels[i]['end_hour']) {
+      $(dashPanels[i]['name']).show();
+      dashPanels[i]['callback'](); //weird syntax to call our callback
+      //clearInterval(rotation);
+      setTimeout(step, dashPanels[i]['interval']*1000);
+    }else{
+      //go immediately to the next one...
+      setTimeout(step, 0);
+    }
     i = (i + 1) % dashPanels.length;
 }
 
-function stop() {
-  clearInterval(rotation);
-}
-
-//rotate between panels
-rotation = setInterval(step,ROTATION_INTERVAL * 1000);
 
 // A simple JSON request cache using the HTML5 "SessionStorage" object to store the JSON response as the value with the URL as the key
 //Must pass a callback because the request happens asynchronously

@@ -2,8 +2,6 @@
 // Shows a clock in the upper right.
 // TODO: change bg color as time approaches time to leave.
 
-$(function() {
-
   //size our text in the main clock panel
   //$("#clock-panel h1").fitText(0.01);
   //$('#clock-panel').height(window.innerHeight*0.9).width(window.innerWidth*0.9);
@@ -26,14 +24,15 @@ $(function() {
     if(d.getHours() == 8 && d.getMinutes() > 30) {
       $(".clock").addClass("red");
     }
+
+    //random color
+    color = "#"
+    for(i = 0; i<6; i++){
+      color += (Math.random()*0x9<<0).toString(16)
+    }
+
+    //alert(color);
+    $("#clock").css('background',color)
+
+
   }
-
-  //update every 30 sec
-  setInterval(updateTime,1000*20);
-
-  //first time...
-  updateTime();
-
-  //Don't display for now...
-  //dashPanels.push({name:'#clock',callback: updateTime});
-});

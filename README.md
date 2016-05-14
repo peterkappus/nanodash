@@ -34,16 +34,18 @@ The idea is to have a set of "panels" that can be rotated through. I'm discoveri
 
 ## TODO
 
+-
 - Add tests. Yes, really.
 - Make it easy to configure the times when the clock background should turn red.
 - Document some architecture goals. E.G. tiny light-weight modules that can be swapped in and out.
-- Build a way to rotate through various panels on a timer.
 - Build a text snippet display module (read from Google docs, or JSON, or HTML. Display one chunk every day?)
 - Build a news/headline module.
 - Make more awesome...
 
 
 ## Done Recently (changelog)
+- Add "time" attribute to panels to define how long to show each one
+- Build a way to rotate through various panels on a timer.
 - Make bus regex, bus URL, and forecast location configurable
 - Make clock BG turn red from 8:30-9am.
 - Add Celsius display of high temp (so I can learn)

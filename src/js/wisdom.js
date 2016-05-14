@@ -39,5 +39,3 @@ function wisdom_setup(){
   //resize the text to fill the box
   $('.blockToFill').textfill({minFontPixels:20, maxFontPixels:1500});
 }
-
-dashPanels.push({name:'#wisdom',callback: wisdom_setup});

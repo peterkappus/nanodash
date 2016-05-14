@@ -30,9 +30,6 @@ html lang="en"
         background: #000;
         color: #fff;
       }
-      .container{
-        height: 100%;
-      }
       h1 {
         line-height: 95%;
       }
@@ -46,7 +43,6 @@ html lang="en"
         font-size: 12rem;
       }
       #clock {
-        height: 90%;
         width: 100%;
         display: flex;
         align-items: center;
@@ -58,14 +54,15 @@ html lang="en"
       }
       .dashpanel {
         display: none;
+        height: 100%;
       }
   body
-    .container
-      #weatherBus.dashpanel
+    #weatherBus.dashpanel
+      .container
         .row
           .col-md-6
             h3#temp
-          .col-md-6
+          /.col-md-6
             h3.clock.pull-right
         .row
           .col-md-12
@@ -74,20 +71,31 @@ html lang="en"
               small#high_c
             /h2#next_bus
             h3#low
-      #wisdom.dashpanel
+    #wisdom.dashpanel
+      .container
         .row
           .col-md-12.blockToFill
             span#picked
-      #clock.dashpanel
-        / dumb thing because the new vertical centering trick (see CSS above) won't work on my old-ass ipad...
-        h2
-          br
-          br
-          br
-          br
-          br
-          br
-        h1.clock ...
+    #clock.dashpanel
+      / dumb thing because the new vertical centering trick (see CSS above) won't work on my old-ass ipad...
+      h2
+        br
+        br
+        br
+        br
+        br
+        br
+      h1.clock ...
+    #bedtime.dashpanel
+      / dumb thing because the new vertical centering trick (see CSS above) won't work on my old-ass ipad...
+      h2
+        br
+        br
+        br
+        br
+        br
+        br
+      h1.clock Time for bed!
     script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
     script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"
     script src="/js/all.min.js?cachebuster=#{Time.now.to_i}"
