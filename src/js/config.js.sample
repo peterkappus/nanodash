@@ -28,3 +28,4 @@ dashPanels.push({name:'#blank', interval: 30, start_hour: 0, end_hour: 8});
 dashPanels.push({name:'#wisdom',callback: wisdom_setup, interval: 10, start_hour: 8, end_hour: 24});
 dashPanels.push({name:'#weatherBus',callback: weather_setup, interval: 15, start_hour: 8, end_hour: 20});
 dashPanels.push({name:'#clock', callback: showTime, interval: 10, start_hour: 0, end_hour: 24});
+dashPanels.push({name:'#clock', callback: showTime, interval: 10, start_hour: 0, end_hour: 24});

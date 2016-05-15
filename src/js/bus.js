@@ -9,7 +9,7 @@ $(function() {
 
   //NOTE: BUS_URL & BUS_REGEX must be set in "config.js"
 
-  departureTime = null;
+  var departureTime = null;
 
   function getDepartureTime(){
     $.getJSON(BUS_URL,function(data){
