@@ -1,6 +1,6 @@
 # nanodash
 
-A tiny, lightweight framework for building info boards based purely on client-side JS/HTML. Based on Bootstrap for typography & layout and jQuery for grabbing and twerking data.
+A tiny, lightweight framework for building time-based, rotating real-time info boards based purely on client-side JS/HTML. Uses Bootstrap for typography & layout and jQuery for grabbing and twerking data.
 
 ## Caveat Emptor
 
@@ -14,21 +14,12 @@ Note: these instructions assume Node.js 0.10.28
   - Run `npm install` to install the required Node.js modules
   - To get weather data sign up for an API key from [Forecast.io](https://developer.forecast.io/)
   - Copy "config.js.sample" to "config.js"
-  - Swap in your API key.
-  - Run Gulp to compile your code  
+  - Swap in your forecast.io API key and lat/long (if you want weather)
+  - Run `$gulp` compile your code
+  - Visit http://localhost:1337 and tweak your code.
   - Deploy your compiled HTML (in the 'dist' folder) to a web server, CDN, etc.
 
-
-Starting gulp:
-
-    $ gulp
-
-Now visit http://localhost:1337 to see your code in action. You can use LiveReload to see changes in realtime.
-
-## Using Google Sheets
-TODO: How to use a google sheet to drive the wisdom box.
-
-## A note on architecture
+## Adding panels
 The `index.html.slim` file contains all the panels. Each must have a unique ID and a class of `.dashpanel`.
 
 To add panels, call the `addPanel` method and pass in a callback to call each time the panel is loaded, an interval (how many seconds to show the panel, the hour when it should start showing (0-24) and the hour when it should stop showing. A final dictionary object holds additional info which gets passed into the callback (e.g. text to display).
