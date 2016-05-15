@@ -2,7 +2,7 @@ dashPanels = [];
 
 MAX_CACHE_AGE_HOURS = 2;
 
-function addPanel(callback, interval, start_hour = 0, end_hour = 24, data={}){
+function addPanel(callback, interval, start_hour, end_hour, data){
   dashPanels.push({callback: callback, interval: interval, start_hour: start_hour, end_hour: end_hour, data: data});
 }
 

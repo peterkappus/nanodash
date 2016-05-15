@@ -62,7 +62,4 @@ function wisdom_setup(){
       $('.blockToFill').textfill({minFontPixels:20, maxFontPixels:1500});
 
     });*/
-
-    //must return the panel
-    return($("#wisdom"));
 }

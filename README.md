@@ -29,23 +29,27 @@ Now visit http://localhost:1337 to see your code in action. You can use LiveRelo
 TODO: How to use a google sheet to drive the wisdom box.
 
 ## A note on architecture
-The idea is to have a set of "panels" that can be rotated through. I'm discovering this is actually a bad user experience because, if the panel you want to see isn't showing...you have to wait for it to come around. I may revisit this soon, but for now each panel uses a `.dashpanel` class. There's an array of "dashpanels" which each JS file can add to by pushing the name and a callback to call each time the panel is shown. useful when you want to reload or reformat something on each rotation. Call it like so:
+The `index.html.slim` file contains all the panels. Each must have a unique ID and a class of `.dashpanel`.
 
-`dashPanels.push({name:'#myCoolPanel',callback: myCoolSetupFunction});`
+To add panels, call the `addPanel` method and pass in a callback to call each time the panel is loaded, an interval (how many seconds to show the panel, the hour when it should start showing (0-24) and the hour when it should stop showing. A final dictionary object holds additional info which gets passed into the callback (e.g. text to display).
 
+```
+addPanel(callback, interval, start_hour, end_hour, data_object}
+```
+
+### For example...
+```
+addPanel(basic_sign, 15, 7,9, {text: 'Good morning!', background: '#a00'});
+```
 
 ## TODO
 
--
 - Add tests. Yes, really.
-- Make it easy to configure the times when the clock background should turn red.
-- Document some architecture goals. E.G. tiny light-weight modules that can be swapped in and out.
-- Build a text snippet display module (read from Google docs, or JSON, or HTML. Display one chunk every day?)
-- Build a news/headline module.
-- Make more awesome...
-
+- Pull data from a public google spreadsheet
 
 ## Done Recently (changelog)
+- Add "addPanel" method and clean up config
+- Consolidate panel types
 - Add "time" attribute to panels to define how long to show each one
 - Build a way to rotate through various panels on a timer.
 - Make bus regex, bus URL, and forecast location configurable
