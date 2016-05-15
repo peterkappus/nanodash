@@ -44,7 +44,8 @@ function displayWeather(data){
   showTemp("#low",low);
 }
 
-function weather_setup(){
+function weather(){
+  $("#weatherBus").fadeIn();
   $("h1#temps").fitText(0.24); //set font-sizes
   $("h2#next_bus").fitText(0.89);
   cachedGetter(url,displayWeather);

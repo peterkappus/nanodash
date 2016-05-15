@@ -15,6 +15,8 @@ FORECAST_LAT_LONG = "51.554757,-0.165694";
 
 ROTATION_INTERVAL = 10; //seconds between panel rotations
 
+GOOGLE_URL = "https://jsonp.afeld.me/?url=https://docs.google.com/spreadsheets/d/1cfHDdtHR6r59hfBcl-52XVBZnuFRICpREcYJjeF5xFs/pubhtml?gid=0&single=true&callback=?";
+
 //A google sheet with columns for "text" and "credit"
 WISDOM_URL = "https://spreadsheets.google.com/feeds/list/<PUT_YOUR_SPREADSHEET_KEY_HERE>/od6/public/values?alt=json-in-script&callback=x"
 

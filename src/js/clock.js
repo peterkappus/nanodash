@@ -9,7 +9,7 @@
   //$('#clock-panel h1').textfill({minFontPixels:20, maxFontPixels:1500});
 
 
-  function showTime(){
+  function clock(){
     d = new Date();
     min = d.getMinutes();
 
@@ -18,21 +18,21 @@
       min = "0" + min;
     }
 
-    $(".clock").html(d.getHours() + ":" + min);
+    $("#basic_sign #content").html(d.getHours() + ":" + min);
 
     //is it time to go?
     if(d.getHours() == 8 && d.getMinutes() > 30) {
-      $(".clock").addClass("red");
+      $("#basic_sign #content").addClass("red");
     }
 
-    //random color
+    //random color... just kuz.
     color = "#"
     for(var i = 0; i<6; i++){
       color += (Math.random()*0x9<<0).toString(16)
     }
 
-    //alert(color);
-    $("#clock").css('background',color)
+    $("#basic_sign").css('background',color)
 
+    $("#basic_sign").fadeIn();
 
   }

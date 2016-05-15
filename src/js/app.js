@@ -2,6 +2,10 @@ dashPanels = [];
 
 MAX_CACHE_AGE_HOURS = 2;
 
+function addPanel(callback, interval, start_hour = 0, end_hour = 24, data={}){
+  dashPanels.push({callback: callback, interval: interval, start_hour: start_hour, end_hour: end_hour, data: data});
+}
+
 //check for local storage
 function supports_html5_storage() {
   try {
@@ -15,16 +19,11 @@ function supports_html5_storage() {
 //TODO make this smarter so it a) rotates through > 2 panels and b) allows you to set how much time to spend on each.
 var i = 0;
 function step(){
-   //alert(i);
     $('.dashpanel').hide(); //hide em all
     hour = new Date().getHours();
     //show this panel if it's within the hours specified.
     if(hour >= dashPanels[i]['start_hour'] && hour < dashPanels[i]['end_hour']) {
-      $(dashPanels[i]['name']).fadeIn();
-      if(dashPanels[i]['callback']) {
-        dashPanels[i]['callback'](); //weird syntax to call our callback
-      }
-      //clearInterval(rotation);
+        dashPanels[i]['callback'](dashPanels[i]['data']);
       setTimeout(step, dashPanels[i]['interval']*1000);
     }else{
       //go immediately to the next one...
