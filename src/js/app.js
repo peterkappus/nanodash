@@ -20,8 +20,7 @@ function step(){
     hour = new Date().getHours();
     //show this panel if it's within the hours specified.
     if(hour >= dashPanels[i]['start_hour'] && hour < dashPanels[i]['end_hour']) {
-      $(dashPanels[i]['name']).show();
-
+      $(dashPanels[i]['name']).fadeIn();
       if(dashPanels[i]['callback']) {
         dashPanels[i]['callback'](); //weird syntax to call our callback
       }
