@@ -19,7 +19,7 @@ function step(){
     $('.dashpanel').hide(); //hide em all
     hour = new Date().getHours();
     //show this panel if it's within the hours specified.
-    if(hour >= dashPanels[i]['start_hour'] && hour <= dashPanels[i]['end_hour']) {
+    if(hour >= dashPanels[i]['start_hour'] && hour < dashPanels[i]['end_hour']) {
       $(dashPanels[i]['name']).show();
 
       if(dashPanels[i]['callback']) {
