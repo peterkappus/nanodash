@@ -21,13 +21,11 @@ GOOGLE_URL = "https://jsonp.afeld.me/?url=https://docs.google.com/spreadsheets/d
 WISDOM_URL = "https://spreadsheets.google.com/feeds/list/<PUT_YOUR_SPREADSHEET_KEY_HERE>/od6/public/values?alt=json-in-script&callback=x"
 
 //Add panels here
-//dashPanels.push({name:'#blank', interval: 500, start_hour: 10, end_hour: 18});
 //you can include a panel multiple times for different intervals and time periods
-dashPanels.push({name:'#bedtime', interval: 30, start_hour: 22, end_hour: 24});
-dashPanels.push({name:'#bedtime', interval: 30, start_hour: 0, end_hour: 1});
-//you can use a blank panel for darkness (e.g. from midnight to 8am)
-dashPanels.push({name:'#blank', interval: 30, start_hour: 0, end_hour: 8});
-dashPanels.push({name:'#wisdom',callback: wisdom_setup, interval: 10, start_hour: 8, end_hour: 24});
-dashPanels.push({name:'#weatherBus',callback: weather_setup, interval: 15, start_hour: 8, end_hour: 20});
-dashPanels.push({name:'#clock', callback: showTime, interval: 10, start_hour: 0, end_hour: 24});
-dashPanels.push({name:'#clock', callback: showTime, interval: 10, start_hour: 0, end_hour: 24});
+addPanel(basic_sign, 15, 22, 24, {text: 'Time for bed!', background: '#600'}); //pre-midnight
+addPanel(basic_sign, 15, 0, 2, {text: 'Fo realz: Go to bed!', background: '#a00'}); // post-midnight
+addPanel(wisdom_setup, 15, 8, 24);
+addPanel(clock, 15, 0, 24);
+addPanel(basic_sign, 30, 0, 8); //blank!
+//addPanel(long_text, 15, 0, 24, {text: "This is a longer piece of text to fit inside the box."});
+addPanel(weather, 15, 8, 23);
