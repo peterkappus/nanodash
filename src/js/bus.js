@@ -1,6 +1,7 @@
 $(function() {
   //TODO add these: https://github.com/erikflowers/weather-icons; http://cdnjs.com/libraries/weather-icons
 
+
   //bus times stuff
   //using Aiden Feldman's awesome JSONProxy: https://jsonp.afeld.me/
   //TFL has an API for bus-times but it requires IP whitelisting (and authentication) which won't do for a client-only solution like this
@@ -29,13 +30,15 @@ $(function() {
     $("#next_bus").html(min + " min to next bus");
   }
 
+  //TODO: Rethink this now that each panel gets a callback everytime it shows...
+
   //retreive every 5 min
-  setInterval(getDepartureTime,1000*60*5);
+  //setInterval(getDepartureTime,1000*60*5);
 
   //update every min
-  setInterval(updateMinToDeparture,1000*60);
+  //setInterval(updateMinToDeparture,1000*60);
 
   //first time...
-  getDepartureTime();
+  //getDepartureTime();
 
 });

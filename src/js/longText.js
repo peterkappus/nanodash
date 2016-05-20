@@ -1,7 +1,7 @@
 // A generic fill text box with customised background color
 
 
-function long_text(data={text:'', background: '#000'}) {
+function long_text(data) {
 
   $("#long_text").css('background', data['background']);
   $("#long_text #content").html(data['text']);
