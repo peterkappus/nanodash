@@ -1,7 +1,7 @@
 
 //A simple sign with a few words.
 
-function basic_sign(data) {
+function basic_sign(data={text:'', background: '#000'}) {
 
   $("#basic_sign").css('background', data['background']);
   $("#basic_sign #content").html(data['text']);
