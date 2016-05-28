@@ -20,6 +20,9 @@ GOOGLE_URL = "https://jsonp.afeld.me/?url=https://docs.google.com/spreadsheets/d
 //A google sheet with columns for "text" and "credit"
 WISDOM_URL = "https://spreadsheets.google.com/feeds/list/<PUT_YOUR_SPREADSHEET_KEY_HERE>/od6/public/values?alt=json-in-script&callback=x"
 
+//A string of image URLs separated by spaces (for the art panel)
+IMG_URLs = "http://www.tate.org.uk/art/images/work/N/N00/N00407_10.jpg http://www.tate.org.uk/art/images/work/P/P77/P77017_10.jpg"
+
 //Add panels here
 //you can include a panel multiple times for different intervals and time periods
 addPanel(basic_sign, 15, 22, 24, {text: 'Time for bed!', background: '#600'}); //pre-midnight
