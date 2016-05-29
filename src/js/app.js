@@ -1,4 +1,5 @@
-dashPanels = [];
+
+var dashPanels = [];
 
 MAX_CACHE_AGE_HOURS = 2;
 

@@ -1,11 +1,9 @@
-
 //use the forecast.io API to get the weather
 //You'll need to specify an API key in the config.js
 //Be careful where you deploy this since it'll be visible in the code
 //you could implement some sort of server-side proxy if you wanted to hide your key...
 //TODO add these: https://github.com/erikflowers/weather-icons; http://cdnjs.com/libraries/weather-icons
 
-url = "https://api.forecast.io/forecast/" + FORECAST_IO_API_KEY + "/" + FORECAST_LAT_LONG + "?&callback=?"
 
 //$("h1#temps").fitText(0.24);
 
@@ -48,5 +46,8 @@ function weather(){
   $("#weatherBus").fadeIn();
   $("h1#temps").fitText(0.24); //set font-sizes
   $("h2#next_bus").fitText(0.89);
+
+  url = "https://api.forecast.io/forecast/" + FORECAST_IO_API_KEY + "/" + FORECAST_LAT_LONG + "?&callback=?"
+
   cachedGetter(url,displayWeather);
 }

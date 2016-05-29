@@ -1,16 +1,13 @@
-
-
-//NOTE: _10.jpg == big!
-var urls = IMG_URLs.split(' ');
-var img_index = Math.round(Math.random() * (urls.length-1));
-
 var loaded = true;
 var placeholder = new Image();
+var img_index = 0;
 
-function art(){
+function show_art(){
+  var urls = IMG_URLS.split(' ');
+  img_index = Math.round(Math.random() * (urls.length-1));
+
   if(loaded) {
     img_url = urls[img_index];
-    //alert(img_index);
     $("#art").hide();
     //img_url = urls[Math.round(Math.random()*(urls.length-1))];
     $('#art img').attr('src',img_url);
@@ -18,7 +15,6 @@ function art(){
     $('#art img').load(function(img_url){
         $('#art').css('text-align','center');
          $("#art").fadeIn();
-         //console.log("loaded " + img_url);
          loaded = true;
        });
     $('#art img').css('height','100%');
