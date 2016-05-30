@@ -4,7 +4,11 @@ var img_index = 0;
 
 function show_art(){
   var urls = IMG_URLS.split(' ');
-  img_index = Math.round(Math.random() * (urls.length-1));
+
+  //only randomize if we're at zero.
+  if(img_index == 0) {
+    img_index = Math.round(Math.random() * (urls.length-1));
+  }
 
   if(loaded) {
     img_url = urls[img_index];

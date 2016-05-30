@@ -33,6 +33,11 @@ addPanel(callback, interval, start_hour, end_hour, data_object}
 addPanel(basic_sign, 15, 7,9, {text: 'Good morning!', background: '#a00'});
 ```
 
+###Pull JPG urls from the source of a page:
+```
+pbpaste | grep -oE "http://\S*?png"
+```
+
 ## TODO
 
 - Add tests. Yes, really.
