@@ -22,8 +22,8 @@ function words_for_ps(){
   var start = new Date(now.getFullYear(), 0, 0);
   var diff = now - start;
   //var oneDay = 1000 * 60 * 60 * 24;
-  var oneHour = 1000 * 60 * 60 * 1;
-  var interval = 10 * 1000; //30 seconds
+  //var oneHour = 1000 * 60 * 60 * 1;
+  var interval = 10 * 1000; //x seconds * 1000ms
   //var dayOfYear = Math.floor(diff / oneDay);
 
   //rotate daily
