@@ -11,10 +11,12 @@ $(function() {
   //NOTE: BUS_URL & BUS_REGEX must be set in "config.js"
 
   var departureTime = null;
+  var d = null;
 
   function getDepartureTime(){
     $.getJSON(BUS_URL,function(data){
-      //get the first one
+      //body = data.data;
+
       minutes = BUS_REGEX.exec(data.data)[1];
       departureTime = Date.now() + (60*1000*minutes); //in seconds
       updateMinToDeparture();
@@ -33,12 +35,12 @@ $(function() {
   //TODO: Rethink this now that each panel gets a callback everytime it shows...
 
   //retreive every 5 min
-  //setInterval(getDepartureTime,1000*60*5);
+  setInterval(getDepartureTime,1000*60*5);
 
   //update every min
-  //setInterval(updateMinToDeparture,1000*60);
+  setInterval(updateMinToDeparture,1000*60);
 
   //first time...
-  //getDepartureTime();
+  getDepartureTime();
 
 });
