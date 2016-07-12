@@ -1,10 +1,25 @@
 
 var dashPanels = [];
+var img_urls = "";
+WORDS_FOR_PS = "";
 
 MAX_CACHE_AGE_HOURS = 2;
 
 function addPanel(callback, interval, start_hour, end_hour, data){
   dashPanels.push({callback: callback, interval: interval, start_hour: start_hour, end_hour: end_hour, data: data});
+}
+
+
+function getGoogleData() {
+  tt = Tabletop.init( { key: GOOGLE_SHEET_KEY,
+                   callback: parse_art_urls,
+                   simpleSheet: false, debug: true} )
+}
+
+function parse_art_urls(data,table_top) {
+  img_urls = data["art_string"].elements[0].art_string;
+  WORDS_FOR_PS = data["words_for_ps"].elements[0].words;
+  step();
 }
 
 //check for local storage
@@ -71,5 +86,8 @@ function cachedGetter(url,callback) {
 }
 
 $(function() {
-  step();
+  getGoogleData();
+  //call our first step(); after our GoogleData loads.
+  //step();
+
 });

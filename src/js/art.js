@@ -3,7 +3,7 @@ var placeholder = new Image();
 var img_index = 0;
 
 function show_art(){
-  var urls = IMG_URLS.split(' ');
+  var urls = img_urls.split(' ');
 
   //only randomize if we're at zero.
   if(img_index == 0) {
