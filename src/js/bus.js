@@ -25,6 +25,13 @@ $(function() {
 
   function updateMinToDeparture(){
     min = Math.floor((departureTime - Date.now())/(1000*60));
+
+    //hacky work-around for scenario where server is down and we get a huge negative number
+    if (min < 0) {
+      $("#next_bus").html("");
+      return;
+    }
+
     if(min < 1) {
       getDepartureTime();
     }

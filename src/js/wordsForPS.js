@@ -37,7 +37,7 @@ function words_for_ps(){
   $('#wisdom').fadeIn();
 
   //resize the box to fill the screen
-  $('.blockToFill').height(window.innerHeight*0.9).width(window.innerWidth*0.9);
+  $('.blockToFill').height(window.innerHeight*0.9).width(window.innerWidth);
 
   //resize the text to fill the box
   $('.blockToFill').textfill({minFontPixels:20, maxFontPixels:1500});

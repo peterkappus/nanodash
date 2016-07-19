@@ -4,7 +4,7 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     / refresh every X Seconds
-    meta http-equiv="refresh" content="300"
+    meta http-equiv="refresh" content="600"
     meta name="viewport" content="width=device-width, initial-scale=1"
     / hide safari stuff on ipad, etc.
     meta name="apple-mobile-web-app-capable" content="yes"
@@ -64,6 +64,11 @@ html lang="en"
       .art img{
         height: 100%;
       }
+
+      .blockToFill {
+        text-align: center;
+      }
+
   body
     #art.dashpanel
       img
@@ -80,13 +85,11 @@ html lang="en"
             h2#next_bus
             h3#low
     #wisdom.dashpanel
-      .container
-        .blockToFill
-          span#picked
+      .blockToFill
+        span#picked
     #long_text.dashpanel
-      .container
-        .blockToFill
-          span#content
+      .blockToFill
+        span#content
     #basic_sign.dashpanel
       / dumb thing because the new vertical centering trick (see CSS above) won't work on my old-ass ipad...
       h2
