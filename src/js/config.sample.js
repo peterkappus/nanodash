@@ -25,6 +25,7 @@ IMG_URLs = ""
 
 //Add panels here
 //you can include a panel multiple times for different intervals and time periods
+//addPanel(callback, interval, start_hour, end_hour, data)
 addPanel(basic_sign, 15, 22, 24, {text: 'Time for bed!', background: '#600'}); //pre-midnight
 addPanel(basic_sign, 15, 0, 2, {text: 'Fo realz: Go to bed!', background: '#a00'}); // post-midnight
 addPanel(wisdom_setup, 15, 8, 24);
