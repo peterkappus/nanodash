@@ -12,13 +12,14 @@ function addPanel(callback, interval, start_hour, end_hour, data){
 
 function getGoogleData() {
   tt = Tabletop.init( { key: GOOGLE_SHEET_KEY,
-                   callback: parse_art_urls,
+                   callback: parseSheet,
                    simpleSheet: false, debug: true} )
 }
 
-function parse_art_urls(data,table_top) {
+function parseSheet(data,table_top) {
   img_urls = data["art_string"].elements[0].art_string;
-  WORDS_FOR_PS = data["words_for_ps"].elements[0].words;
+  WORDS_FOR_PS = data["words_for_ps"].all().map(function(x){return x['words']});
+  //console.log(WORDS_FOR_PS);
   step();
 }
 

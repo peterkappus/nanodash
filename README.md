@@ -10,14 +10,24 @@ A major goal of this project is to keep everything client-side so you can throw 
 
 Note: these instructions assume Node.js 0.10.28
   - Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
+    - `npm rm --global gulp`
+    - `npm install --global gulp-cli`
+    - `npm init`
+    - `npm install --save-dev gulp`
+
   - Run `gem install slim` to install the ruby gem for slim if you don't have it installed already
   - Run `npm install` to install the required Node.js modules
   - To get weather data sign up for an API key from [Forecast.io](https://developer.forecast.io/)
   - Copy "config.js.sample" to "config.js"
   - Swap in your forecast.io API key and lat/long (if you want weather)
-  - Run `$gulp` compile your code
-  - Visit http://localhost:1337 and tweak your code.
+  - Run `gulp` to compile & serve your code
+  - Visit http://localhost:1337 and tweak away.
   - Deploy your compiled HTML (in the 'dist' folder) to a web server, CDN, etc.
+
+## Deploying to S3 using s3cmd
+- `brew install s3cmd` (if you're using brew)
+- Then you can run `s3cmd sync dist/ s3://your.bucket.name --delete-removed -P --rexclude=.git*` to sync your files.
+
 
 ## Adding panels
 The `index.html.slim` file contains all the panels. Each must have a unique ID and a class of `.dashpanel`.

@@ -4,16 +4,42 @@
   "description": "Gulp Recipe - Jade, Sass, Livereload and static server",
   "devDependencies": {
     "express": "~3.4.8",
-    "gulp": "~3.5.0",
+    "gulp": "~3.5.6",
     "gulp-concat": "~2.1.7",
     "gulp-csso": "~0.1.8",
     "gulp-jade": "~0.3.0",
     "gulp-livereload": "~0.2.0",
-    "gulp-sass": "~0.4.1",
     "gulp-slim": "~0.3.0",
     "gulp-uglify": "~0.1.0",
     "gulp-util": "~2.2.12",
     "marked": "~0.3.0",
     "tiny-lr": "0.0.5"
-  }
+  },
+  "main": "gulpfile.js",
+  "dependencies": {
+    "express": "^3.4.8",
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.1.7",
+    "gulp-csso": "^0.1.8",
+    "gulp-jade": "^0.3.0",
+    "gulp-livereload": "^0.2.0",
+    "gulp-slim": "^0.3.0",
+    "gulp-uglify": "^0.1.0",
+    "gulp-util": "^2.2.20",
+    "marked": "^0.3.6",
+    "tiny-lr": "^0.0.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterkappus/nanodash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterkappus/nanodash/issues"
+  },
+  "homepage": "https://github.com/peterkappus/nanodash#readme"
 }

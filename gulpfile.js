@@ -1,6 +1,6 @@
 var gulp        = require('gulp'),
     gutil       = require('gulp-util'),
-    sass        = require('gulp-sass'),
+    //sass        = require('gulp-sass'),
     csso        = require('gulp-csso'),
     uglify      = require('gulp-uglify'),
     jade        = require('gulp-jade'),
@@ -16,7 +16,7 @@ var gulp        = require('gulp'),
 
 
 // --- Basic Tasks ---
-gulp.task('css', function() {
+/*gulp.task('css', function() {
   return gulp.src('src/css/*')
     .pipe(
       sass( {
@@ -27,6 +27,7 @@ gulp.task('css', function() {
     .pipe( gulp.dest('dist/css/') )
     .pipe( livereload( server ));
 });
+*/
 
 gulp.task('js', function() {
   return gulp.src('src/js/*.js')
@@ -62,7 +63,7 @@ gulp.task('watch', function () {
     if (err) {
       return console.log(err);
     }
-    gulp.watch('src/css/*',['css']);
+    //gulp.watch('src/css/*',['css']);
     gulp.watch('src/js/*.js',['js']);
     gulp.watch('src/*.jade',['templates']);
     gulp.watch('src/*.slim',['slim']);
@@ -70,4 +71,4 @@ gulp.task('watch', function () {
 });
 
 // Default Task
-gulp.task('default', ['js','css','slim','templates','express','watch']);
+gulp.task('default', ['js','slim','templates','express','watch']);

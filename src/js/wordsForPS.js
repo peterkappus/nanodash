@@ -12,8 +12,10 @@ function words_for_ps(){
   //var words = "CAT**RAT**FAT**BAT**MAT**FISH**HAND**CHEESE**LEMONADE**Morning"
 
   //split on newlines to create an array
-  //lines = lines.split("\n");
-  words = WORDS_FOR_PS.split(" ");
+  //words = WORDS_FOR_PS.split("\n");
+  //words = WORDS_FOR_PS.split(" ");
+  //no need to translate since we've already turned WORDS_FOR_PS into an arry in app.js
+  words = WORDS_FOR_PS;
 
 
   //pick based on the current day
