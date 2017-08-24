@@ -8,6 +8,18 @@ A major goal of this project is to keep everything client-side so you can throw 
 
 ## Getting Started
 
+### Using Docker
+
+First time:
+#build the image
+`docker build -t nanodash .`
+
+Subsequent times:
+# login and start the app running
+- `docker run -v "$(pwd):/myapp" -it -p 1337:1337 nanodash bash`
+# in the container
+- `cd /myapp && gulp`
+
 Note: these instructions assume Node.js 0.10.28
   - Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
     - `npm rm --global gulp`

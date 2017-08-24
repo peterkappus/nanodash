@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="900" http-equiv="refresh" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <title>nanodash</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+  <javascript src="//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js">
+  </javascript>
+  <style type="text/css">h1, h2, h3, h4 {
+  font-family: /*LeagueSpartanBold,*/ helvetica;
+  font-weight: bold;
+  /* hacky way to overwrite bootstrap vars */
+  margin-top: 10px !important
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+}
+h1 {
+  line-height: 95%;
+}
+h3 {
+   font-size: 10rem;
+}
+.red{
+  background: #900;
+}
+#high_c {
+  font-size: 12rem;
+}
+#basic_sign{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#basic_sign h1 {
+  text-align: center;
+  font-size: 26rem;
+}
+.dashpanel {
+  display: none;
+  height: 100%;
+}
+.art{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.art img{
+  height: 100%;
+}
+
+.blockToFill {
+  text-align: center;
+}</style></head>
+<body>
+  <div class="dashpanel" id="art"><img/></div>
+  <div class="dashpanel" id="weatherBus">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 id="temp"></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 id="temps">
+            <span id="high"></span>
+            <small id="high_c"></small>
+          </h1>
+          <h2 id="next_bus"></h2>
+          <h3 id="low"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dashpanel" id="wisdom">
+    <div class="container">
+      <div class="blockToFill">
+        <span id="picked"></span>
+      </div>
+    </div>
+  </div>
+  <div class="dashpanel" id="long_text">
+    <div class="container">
+      <div class="blockToFill">
+        <span id="content"></span>
+      </div>
+    </div>
+  </div>
+  <div class="dashpanel" id="basic_sign"><h2>
+    <br /><br /><br /><br /><br />
+  </h2>
+  <h1 id="content"></h1>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.3/tabletop.min.js"></script>
+<script src="/js/all.min.js?cachebuster=1495663060"></script>
+</body>
+</html>

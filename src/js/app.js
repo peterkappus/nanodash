@@ -9,7 +9,6 @@ function addPanel(callback, interval, start_hour, end_hour, data){
   dashPanels.push({callback: callback, interval: interval, start_hour: start_hour, end_hour: end_hour, data: data});
 }
 
-
 function getGoogleData() {
   tt = Tabletop.init( { key: GOOGLE_SHEET_KEY,
                    callback: parseSheet,
@@ -37,7 +36,11 @@ function supports_html5_storage() {
 var i = 0;
 function step(){
     $('.dashpanel').hide(); //hide em all
-    hour = new Date().getHours();
+    if(DEBUG_HOUR != "") {
+      hour = DEBUG_HOUR;
+    }else{
+      hour = new Date().getHours();
+    }
     //show this panel if it's within the hours specified.
     if(hour >= dashPanels[i]['start_hour'] && hour < dashPanels[i]['end_hour']) {
       dashPanels[i]['callback'](dashPanels[i]['data']);

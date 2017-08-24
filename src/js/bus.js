@@ -1,4 +1,9 @@
 $(function() {
+  
+  if(BUS_URL == "") {
+    return;
+  }
+  
   //TODO add these: https://github.com/erikflowers/weather-icons; http://cdnjs.com/libraries/weather-icons
 
 

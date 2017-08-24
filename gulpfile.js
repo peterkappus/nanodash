@@ -4,7 +4,7 @@ var gulp        = require('gulp'),
     csso        = require('gulp-csso'),
     uglify      = require('gulp-uglify'),
     jade        = require('gulp-jade'),
-    slim        = require("gulp-slim"), //let's use slim too :)
+    //slim        = require("gulp-slim"), //let's use slim too :)
     concat      = require('gulp-concat'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
     tinylr      = require('tiny-lr'),
@@ -46,11 +46,12 @@ gulp.task('templates', function() {
     .pipe( livereload( server ));
 });
 
-gulp.task('slim', function(){
+/*gulp.task('slim', function(){
   gulp.src("src/*.slim")
     .pipe( slim() )
     .pipe(gulp.dest("dist/"));
 });
+*/
 
 gulp.task('express', function() {
   app.use(express.static(path.resolve('./dist')));
@@ -71,4 +72,4 @@ gulp.task('watch', function () {
 });
 
 // Default Task
-gulp.task('default', ['js','slim','templates','express','watch']);
+gulp.task('default', ['js',/*'slim',*/'templates','express','watch']);

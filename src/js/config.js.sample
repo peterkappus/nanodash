@@ -3,12 +3,16 @@
 
 FORECAST_IO_API_KEY = "12345...Replace this with your API key.";
 
+//assign this value to override the clock hour
+DEBUG_HOUR = ""
+
 //this is the key to your google sheet containing a table containing your art URLs, words to learn, etc.
 //use this as a guide: https://docs.google.com/spreadsheets/d/1_UVf8j6EOhHgVADH34PVreaL3WrQXPyfN2cQ-6Z16GU/edit?usp=sharing
 
 GOOGLE_SHEET_KEY = "1_UVf8j6EOhHgVADH34PVreaL3WrQXPyfN2cQ-6Z16GU";
 
 //using Aiden Feldman's awesome JSONProxy: https://jsonp.afeld.me/
+// assign to an empty string "" if you don't need a bus-timer
 BUS_URL = "https://jsonp.afeld.me/?url=http%3A%2F%2Fm.countdown.tfl.gov.uk%2Farrivals%2F76840&callback=?";
 
 //this nasty regex gives us the time to the next 168 bus
