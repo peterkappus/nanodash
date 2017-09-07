@@ -18,8 +18,9 @@ Subsequent times:
 # login and start the app running
 - `docker run -v "$(pwd):/myapp" -it -p 1337:1337 nanodash bash`
 # in the container
-- `cd /myapp && gulp`
+- `gulp`
 
+# OBSOLETE
 Note: these instructions assume Node.js 0.10.28
   - Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
     - `npm rm --global gulp`
@@ -29,6 +30,9 @@ Note: these instructions assume Node.js 0.10.28
 
   - Run `gem install slim` to install the ruby gem for slim if you don't have it installed already
   - Run `npm install` to install the required Node.js modules
+
+
+## Other stuff  
   - To get weather data sign up for an API key from [Forecast.io](https://developer.forecast.io/)
   - Copy "config.js.sample" to "config.js"
   - Swap in your forecast.io API key and lat/long (if you want weather)
