@@ -6,7 +6,8 @@ WORDS_FOR_PS = "";
 MAX_CACHE_AGE_HOURS = 2;
 
 function addPanel(callback, interval, start_hour, end_hour, data){
-  dashPanels.push({callback: callback, interval: interval, start_hour: start_hour, end_hour: end_hour, data: data});
+  //alert(callback);
+  dashPanels.push({callback: eval(callback), interval: interval, start_hour: start_hour, end_hour: end_hour, data: data});
 }
 
 function getGoogleData() {
@@ -16,8 +17,19 @@ function getGoogleData() {
 }
 
 function parseSheet(data,table_top) {
-  img_urls = data["art_string"].elements[0].art_string;
-  WORDS_FOR_PS = data["words_for_ps"].all().map(function(x){return x['words']});
+  img_urls = data["art_urls"].elements[0].art_string;
+  STRINGS = data["strings"].all().map(function(x){return x['words']});
+
+  //add panels based on data in google sheet
+  for(var i in data["schedule"].all()) {
+    SAFE_PANEL_NAMES = /basic_sign|clock|long_text|showStrings|weather/;
+    row = data["schedule"].toArray()[i];
+    panel_name = row[0];
+    //console.log(panel_name);
+    if(panel_name.match(SAFE_PANEL_NAMES)) {
+      addPanel(panel_name,row[1],row[2],row[3],row[4]);
+    }
+  }
   //console.log(WORDS_FOR_PS);
   step();
 }
