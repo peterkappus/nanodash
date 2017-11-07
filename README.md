@@ -20,17 +20,6 @@ Subsequent times:
 # in the container
 - `gulp`
 
-# OBSOLETE
-Note: these instructions assume Node.js 0.10.28
-  - Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
-    - `npm rm --global gulp`
-    - `npm install --global gulp-cli`
-    - `npm init`
-    - `npm install --save-dev gulp`
-
-  - Run `gem install slim` to install the ruby gem for slim if you don't have it installed already
-  - Run `npm install` to install the required Node.js modules
-
 
 ## Other stuff  
   - To get weather data sign up for an API key from [Forecast.io](https://developer.forecast.io/)
