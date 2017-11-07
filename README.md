@@ -67,9 +67,9 @@ pbpaste | grep -oE "http://\S*?png"
 ## TODO
 
 - Add tests. Yes, really.
-- Pull data from a public google spreadsheet
-
+- Simplify: reduce to 1 panel for a number and a caption
 ## Done Recently (changelog)
+- Pull data from a public google spreadsheet
 - Add "addPanel" method and clean up config
 - Consolidate panel types
 - Add "time" attribute to panels to define how long to show each one
