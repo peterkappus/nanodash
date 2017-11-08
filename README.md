@@ -10,6 +10,8 @@ A major goal of this project is to keep everything client-side so you can throw 
 
 ### Using Docker
 
+NOTE: Try to do this without being behind a proxy... if you MUST build behind a proxy, you'll need to setup your proxy settings inside your Dockerfile.
+
 First time:
 #build the image
 `docker build -t nanodash .`

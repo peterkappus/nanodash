@@ -3,7 +3,8 @@ var gulp        = require('gulp'),
     //sass        = require('gulp-sass'),
     csso        = require('gulp-csso'),
     uglify      = require('gulp-uglify'),
-    jade        = require('gulp-jade'),
+    //jade        = require('gulp-jade'),
+    pug = require('gulp-pug'),
     //slim        = require("gulp-slim"), //let's use slim too :)
     concat      = require('gulp-concat'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
@@ -37,9 +38,18 @@ gulp.task('js', function() {
     .pipe( livereload( server ));
 });
 
-gulp.task('templates', function() {
-  return gulp.src('src/*.jade')
-    .pipe(jade({
+gulp.task('templates', function buildHTML() {
+  return gulp.src('src/*.pug')
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest('dist/'))
+    .pipe( livereload( server ));
+});
+
+gulp.task('X', function() {
+  return gulp.src('src/*.pug')
+    .pipe(pug({
       pretty: true
     }))
     .pipe(gulp.dest('dist/'))
@@ -66,8 +76,8 @@ gulp.task('watch', function () {
     }
     //gulp.watch('src/css/*',['css']);
     gulp.watch('src/js/*.js',['js']);
-    gulp.watch('src/*.jade',['templates']);
-    gulp.watch('src/*.slim',['slim']);
+    gulp.watch('src/*.pug',['templates']);
+    //gulp.watch('src/*.slim',['slim']);
   });
 });
 
