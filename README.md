@@ -10,6 +10,8 @@ A major goal of this project is to keep everything client-side so you can throw 
 
 ### Using Docker
 
+NOTE: Try to do this without being behind a proxy... if you MUST build behind a proxy, you'll need to setup your proxy settings inside your Dockerfile.
+
 First time:
 #build the image
 `docker build -t nanodash .`
@@ -19,17 +21,6 @@ Subsequent times:
 - `docker run -v "$(pwd):/myapp" -it -p 1337:1337 nanodash bash`
 # in the container
 - `gulp`
-
-# OBSOLETE
-Note: these instructions assume Node.js 0.10.28
-  - Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
-    - `npm rm --global gulp`
-    - `npm install --global gulp-cli`
-    - `npm init`
-    - `npm install --save-dev gulp`
-
-  - Run `gem install slim` to install the ruby gem for slim if you don't have it installed already
-  - Run `npm install` to install the required Node.js modules
 
 
 ## Other stuff  
